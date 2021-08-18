@@ -1,0 +1,62 @@
+// 宽度 100-500
+@for $i from 1 through 5 {
+  .w-#{$i*100} { width: 100px * $i; }
+}
+// margin 5-40
+@for $i from 5 through 40 {
+    @if  $i%5==0 {
+      .mt-#{$i} { margin-top: 1px * $i; }
+      .ml-#{$i} { margin-left: 1px * $i; }
+      .mr-#{$i} { margin-right: 1px * $i; }
+      .mb-#{$i} { margin-bottom: 1px * $i; }
+    }
+}
+// flex相关
+.flex{
+  display: flex;
+}
+.flex-a-c{
+  align-items: center;
+}
+.flex-j-s-b{
+  justify-content: space-between;
+}
+.flex-j-c{
+  justify-content: center;
+}
+.flex-j-c-e{
+  justify-content: flex-end;
+}
+.flex-center{
+  align-items: center;
+  justify-content: center;
+}
+// 单行省略号
+.single-ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+// 多行省略，默认2行
+// 使用：	@include multiLine-ellipsis(3);
+@mixin multiLine-ellipsis($line:2) {
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: $line;
+	overflow: hidden;
+	display: -webkit-box;
+}
+// 鼠标样式
+.hand{
+  cursor: pointer;
+}
+.display-i-b{
+  display: inline-block;
+}
+.display-b{
+  display: block;
+}
+.text-center{
+  text-align: center;
+}
+
